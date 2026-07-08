@@ -1,9 +1,10 @@
-# [Project name]
+# The Mouthpiece
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A cinematic, documentary-style website for The Mouthpiece — a YouTube/Spotify interview platform founded by Otito Diri Chukwu that gives bereaved people a voice through honest conversations about grief, healing, faith, and hope.
 
 ## Run & Operate
 
+- `pnpm --filter @workspace/mouthpiece run dev` — run the main website (Vite)
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
@@ -22,15 +23,20 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- Main site: `artifacts/mouthpiece/` (React + Vite, single-page marketing site at `/`)
+- API server: `artifacts/api-server/` (Express, handles story submissions and contact messages)
+- DB schema: `lib/db/src/schema/story-submissions.ts`, `lib/db/src/schema/contact-messages.ts`
+- API contract: `lib/api-spec/openapi.yaml`
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Only two flows are backend-backed: "Share Your Story" applications and the contact form. Featured stories, testimonials, and YouTube/Spotify listings are static editorial content, not DB-driven — there is no CMS yet.
+- YouTube/Spotify links are placeholder constants in the frontend source until the real channel/show URLs are provided.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Single-page cinematic site: hero, about, mission, featured stories, "why these stories matter", scripture-inspired section, embedded YouTube section, embedded Spotify section, "Share Your Story" form, testimonials, contact form, footer. Plus standalone `/privacy` and `/terms` pages.
+- Visitors can apply to share their story or send a contact message — both persist to the database.
 
 ## User preferences
 
@@ -38,7 +44,7 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Do not use `format: email` in OpenAPI schemas — the workspace's pinned zod v3 catalog doesn't support the top-level `zod.email()` that Orval generates for that format, and codegen's typecheck step fails. Validate email shape at the application layer instead.
 
 ## Pointers
 

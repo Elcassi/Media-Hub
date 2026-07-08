@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "fLBVhaDk_jOVSXJyS8JVP"
+uri = "file://artifacts/mouthpiece/src/assets/hero.png"
+type = "image"
+title = "cinematic hero reflection"
+
+[[generated]]
+id = "dFp1jGQNgNE1biqAVBfSA"
+uri = "file://artifacts/mouthpiece/src/assets/story1.png"
+type = "image"
+title = "dignified older woman portrait"
+
+[[generated]]
+id = "fEW8muA8YaP3_-nsfTemb"
+uri = "file://artifacts/mouthpiece/src/assets/story2.png"
+type = "image"
+title = "dignified young man portrait"
+
+[[generated]]
+id = "Ovo2CQUzYVb7MfFiTbTw1"
+uri = "file://artifacts/mouthpiece/src/assets/story3.png"
+type = "image"
+title = "middle aged man portrait"
+
+[[generated]]
+id = "xuZDKRbNSvVDv0023uPM1"
+uri = "file://artifacts/mouthpiece/src/assets/story4.png"
+type = "image"
+title = "young woman hopeful portrait"
+
+[[generated]]
+id = "YQijAbUE4YzXABkE6DqJJ"
+uri = "file://artifacts/mouthpiece/src/assets/scripture.png"
+type = "image"
+title = "soft flowing water light"

@@ -1,0 +1,195 @@
+Design a premium, emotionally compelling, documentary-style website for The Mouthpiece, a YouTube interview platform dedicated to stories of grief, healing, faith, and hope.
+
+The logo will be provided. Use it prominently in the navigation bar and throughout the site's branding.
+
+Brand Overview
+
+The Mouthpiece is a YouTube channel founded by Otito Diri Chukwu on 16 April 2025 with the tagline:
+
+"Giving the Bereaved a Voice."
+
+The platform exists to tell the stories most people never share publicly.
+
+Real people.
+
+Real stories.
+
+Grief.
+
+Trauma.
+
+Survival.
+
+The canon events that permanently alter a person's life.
+
+These are the stories people whisper but have never said on camera.
+
+Inspired by Revelation 22:1–5, The Mouthpiece is built on the belief that every story shared brings healing and hope. Through intimate, respectful interviews, bereaved individuals are given a safe space to speak honestly about loss, grief, resilience, and God's faithfulness.
+
+Its mission is simple:
+
+Bringing healing, one testimony at a time.
+
+Design Direction
+
+The website should feel:
+
+Cinematic
+Emotional
+Hopeful
+Premium
+Human
+Minimal
+Documentary-inspired
+Elegant rather than flashy
+
+Imagine a blend of:
+
+Apple's simplicity
+Netflix documentary aesthetics
+A24 visual storytelling
+YouTube Creator Studio polish
+National Geographic editorial photography
+
+The experience should invite visitors to slow down and listen.
+
+Color Palette
+
+Use the brand colors:
+
+Deep Violet (#5A2DFF)
+Gold (#EAB60E)
+White
+Soft warm gray
+Charcoal text
+
+Maintain high contrast and generous white space.
+
+Hero Section
+
+Use a full-screen hero featuring a cinematic portrait of someone in quiet reflection.
+
+Headline:
+
+Every Story Deserves to Be Heard.
+
+Subheadline:
+
+Real people. Real stories. Grief, trauma, survival, and the hope found on the other side. The Mouthpiece gives the bereaved a voice and creates space for healing through honest conversations.
+
+Primary CTA:
+
+Watch Stories
+
+Secondary CTA:
+
+Share Your Story
+
+Include a subtle scroll indicator.
+
+About Section
+
+Introduce the platform with elegant typography.
+
+Giving the Bereaved a Voice
+
+The Mouthpiece exists to preserve stories that are often hidden behind silence. Through deeply personal interviews, people affected by loss share their experiences of grief, faith, resilience, and healing.
+
+Every conversation becomes an opportunity for someone else to find comfort, understanding, and hope.
+
+Mission Section
+
+Display as a highlighted quote.
+
+Bringing healing, one testimony at a time.
+
+Include a short paragraph explaining how shared experiences create connection and remind people they are not alone.
+
+Featured Stories
+
+Create large documentary-style cards displaying:
+
+Portrait image
+Story title
+Short excerpt
+Duration
+Watch Interview button
+
+Use generous spacing and elegant hover effects.
+
+Why These Stories Matter
+
+Three content blocks:
+
+Healing
+
+Stories help people process grief and realize they are not alone.
+
+Hope
+
+Every testimony points toward restoration, resilience, and God's faithfulness.
+
+Legacy
+
+Every story preserves memories that may encourage generations to come.
+
+Scripture Inspiration
+
+Create a tasteful section inspired by Revelation 22:1–5.
+
+Use soft imagery of light and flowing water rather than literal religious artwork.
+
+Include a short note explaining that the passage symbolizes healing, restoration, and hope—the values that inspire The Mouthpiece.
+
+YouTube Section
+
+Feature the latest interviews with large video thumbnails and embedded YouTube videos.
+
+Include:
+
+Latest Episodes
+Most Viewed
+Recently Added
+Share Your Story
+
+A welcoming section inviting visitors to be interviewed.
+
+Include a simple form with:
+
+Full Name
+Email
+Phone Number (optional)
+Tell us about your story
+Preferred contact method
+
+CTA:
+
+Apply to Share Your Story
+
+Testimonials
+
+Include quotes from viewers describing how the interviews encouraged them, helped them process grief, or renewed their hope.
+
+Footer
+
+Include:
+
+Logo
+About
+Watch on YouTube
+Share Your Story
+Contact
+Social media links
+Copyright
+Animations
+
+Use subtle, premium animations:
+
+Fade-in content while scrolling
+Gentle image zoom on hover
+Smooth page transitions
+Soft button interactions
+Avoid excessive motion
+Overall Goal
+
+The website should feel like entering a quiet, safe space where difficult stories can be shared with dignity. Visitors should immediately understand that The Mouthpiece is not simply a YouTube channel, but a platform for healing, remembrance, and hope through authentic human stories. The design should be emotionally resonant, visually restrained, and inspiring enough to encourage visitors to watch, share, and tell their own stories.

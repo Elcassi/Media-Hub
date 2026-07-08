@@ -10,6 +10,10 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: story-submissions
+    description: Story submission operations
+  - name: contact
+    description: Contact message operations
 paths:
   /healthz:
     get:
@@ -24,6 +28,48 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /story-submissions:
+    post:
+      operationId: createStorySubmission
+      tags: [story-submissions]
+      summary: Apply to share your story
+      description: Submits a new "Share Your Story" application
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateStorySubmissionInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StorySubmission"
+        "400":
+          description: Validation error
+  /contact-messages:
+    post:
+      operationId: createContactMessage
+      tags: [contact]
+      summary: Send a contact message
+      description: Submits a message from the contact form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateContactMessageInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactMessage"
+        "400":
+          description: Validation error
 components:
   schemas:
     HealthStatus:
@@ -33,4 +79,87 @@ components:
           type: string
       required:
         - status
+    CreateStorySubmissionInput:
+      type: object
+      properties:
+        fullName:
+          type: string
+          minLength: 1
+        email:
+          type: string
+        phone:
+          type: string
+        story:
+          type: string
+          minLength: 1
+        preferredContactMethod:
+          type: string
+          enum: [email, phone, either]
+      required:
+        - fullName
+        - email
+        - story
+        - preferredContactMethod
+    StorySubmission:
+      type: object
+      properties:
+        id:
+          type: string
+        fullName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+          nullable: true
+        story:
+          type: string
+        preferredContactMethod:
+          type: string
+          enum: [email, phone, either]
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - fullName
+        - email
+        - story
+        - preferredContactMethod
+        - createdAt
+    CreateContactMessageInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+        message:
+          type: string
+          minLength: 1
+      required:
+        - name
+        - email
+        - message
+    ContactMessage:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        message:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+        - email
+        - message
+        - createdAt
 
