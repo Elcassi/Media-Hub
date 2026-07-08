@@ -39,20 +39,28 @@ export function Navbar() {
     }
   };
 
+  const isHome = location === "/";
+  const overlayHero = isHome && !isScrolled;
+
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent bg-background",
-        isScrolled
-          ? "border-border/60 py-4 shadow-sm"
-          : "border-transparent py-5"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
+        overlayHero
+          ? "bg-transparent border-transparent py-6"
+          : "bg-background border-border/60 py-4 shadow-sm"
       )}
     >
       <div className="container mx-auto px-6 md:px-8 flex items-center justify-between">
         <div className="flex items-center gap-12">
           <Link href="/" className="flex items-center gap-3 group z-50">
             <img src={Logo} alt="The Mouthpiece" className="h-10 w-auto" />
-            <span className="font-serif font-bold text-2xl tracking-tight hidden sm:block group-hover:text-primary transition-colors text-foreground">
+            <span
+              className={cn(
+                "font-serif font-bold text-2xl tracking-tight hidden sm:block transition-colors",
+                overlayHero ? "text-white group-hover:text-secondary" : "text-foreground group-hover:text-primary"
+              )}
+            >
               The Mouthpiece
             </span>
           </Link>
@@ -65,14 +73,20 @@ export function Navbar() {
                   {link.href.startsWith("/#") && location === "/" ? (
                     <button
                       onClick={() => handleNavClick(link.href)}
-                      className="text-[15px] font-medium text-foreground/80 hover:text-primary transition-colors"
+                      className={cn(
+                        "text-[15px] font-medium transition-colors",
+                        overlayHero ? "text-white/85 hover:text-white" : "text-foreground/80 hover:text-primary"
+                      )}
                     >
                       {link.name}
                     </button>
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-[15px] font-medium text-foreground/80 hover:text-primary transition-colors"
+                      className={cn(
+                        "text-[15px] font-medium transition-colors",
+                        overlayHero ? "text-white/85 hover:text-white" : "text-foreground/80 hover:text-primary"
+                      )}
                     >
                       {link.name}
                     </Link>
@@ -93,7 +107,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden z-50 p-2 text-foreground"
+          className={cn("lg:hidden z-50 p-2", overlayHero ? "text-white" : "text-foreground")}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >

@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/layout";
 import { Hero } from "@/components/sections/hero";
+import { SubscribeBand } from "@/components/sections/subscribe-band";
 import { About } from "@/components/sections/about";
 import { Mission } from "@/components/sections/mission";
 import { FeaturedStories } from "@/components/sections/featured-stories";
@@ -16,6 +17,7 @@ export default function Home() {
     <Layout>
       <main className="flex flex-col w-full min-h-screen">
         <Hero />
+        <SubscribeBand />
         <About />
         <Mission />
         <FeaturedStories />
