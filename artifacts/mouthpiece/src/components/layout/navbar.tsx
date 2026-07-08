@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import Logo from "@assets/Mouth-Piece_1783521164614.png";
-import { Menu, X, Share } from "lucide-react";
+import { Menu, X, Youtube, Music2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const YOUTUBE_CHANNEL_URL = "https://youtube.com";
+const SPOTIFY_URL = "https://spotify.com";
 
 const navLinks = [
   { name: "Home", href: "/#hero" },
@@ -97,8 +100,36 @@ export function Navbar() {
           </nav>
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 h-12" asChild>
+        <div className="hidden lg:flex items-center gap-3">
+          <a
+            href={YOUTUBE_CHANNEL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Watch on YouTube"
+            className={cn(
+              "w-10 h-10 rounded-full border flex items-center justify-center transition-all",
+              overlayHero
+                ? "border-white/30 text-white hover:bg-white hover:text-[#0E0820]"
+                : "border-border text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary"
+            )}
+          >
+            <Youtube className="w-4 h-4" />
+          </a>
+          <a
+            href={SPOTIFY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Listen on Spotify"
+            className={cn(
+              "w-10 h-10 rounded-full border flex items-center justify-center transition-all",
+              overlayHero
+                ? "border-white/30 text-white hover:bg-white hover:text-[#0E0820]"
+                : "border-border text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary"
+            )}
+          >
+            <Music2 className="w-4 h-4" />
+          </a>
+          <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 h-12 ml-1" asChild>
             <a href="#share">
                Share Your Story
             </a>
@@ -143,8 +174,28 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="flex flex-col mt-auto">
-             <Button size="lg" className="w-full rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium h-14" asChild>
+          <div className="flex flex-col gap-4 mt-auto">
+            <div className="flex items-center gap-3">
+              <a
+                href={YOUTUBE_CHANNEL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Watch on YouTube"
+                className="flex-1 h-14 rounded-full border border-border flex items-center justify-center gap-2 text-foreground font-medium"
+              >
+                <Youtube className="w-5 h-5" /> YouTube
+              </a>
+              <a
+                href={SPOTIFY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Listen on Spotify"
+                className="flex-1 h-14 rounded-full border border-border flex items-center justify-center gap-2 text-foreground font-medium"
+              >
+                <Music2 className="w-5 h-5" /> Spotify
+              </a>
+            </div>
+            <Button size="lg" className="w-full rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium h-14" asChild>
               <a href="#share" onClick={() => setIsMobileMenuOpen(false)}>
                 Share Your Story
               </a>
