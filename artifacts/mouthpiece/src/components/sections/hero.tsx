@@ -1,55 +1,46 @@
 import { Button } from "@/components/ui/button";
-import { Play, Headphones, ArrowDown } from "lucide-react";
+import { Play } from "lucide-react";
 import HeroImage from "@/assets/hero.png";
-
-const YOUTUBE_CHANNEL_URL = "https://youtube.com";
-const SPOTIFY_URL = "https://spotify.com";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img src={HeroImage} alt="Cinematic Hero Reflection" className="w-full h-full object-cover object-center" />
-        <div className="absolute inset-0 bg-black/60 dark:bg-black/70 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-      </div>
-
-      <div className="container relative z-10 mx-auto px-6 md:px-12 text-center text-white">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-6 max-w-5xl mx-auto drop-shadow-sm">
-          Every Story Deserves to Be Heard.
-        </h1>
-        <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-12 font-light leading-relaxed drop-shadow">
-          Real people. Real stories. Grief, trauma, survival, and the hope found on the other side. 
-          The Mouthpiece gives the bereaved a voice and creates space for healing through honest conversations.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <Button size="lg" className="w-full sm:w-auto text-base rounded-full px-8 h-14 bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-            <a href="#stories">Watch Stories</a>
-          </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto text-base rounded-full px-8 h-14 border-white text-white hover:bg-white/10" asChild>
-            <a href="#share">Share Your Story</a>
-          </Button>
-        </div>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors group">
-            <div className="bg-white/10 p-3 rounded-full group-hover:bg-white/20 transition-colors">
-              <Play className="w-5 h-5" />
+    <section id="hero" className="relative bg-background pt-32 pb-16 lg:pt-40 lg:pb-32 overflow-hidden border-b border-border/60">
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="w-full lg:w-[55%] flex flex-col items-start">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-foreground text-sm font-medium mb-8 border border-secondary/20">
+              <span className="w-2 h-2 rounded-full bg-secondary"></span>
+              Giving the bereaved a voice
             </div>
-            <span className="font-medium tracking-wide text-sm">Watch on YouTube</span>
-          </a>
-          <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors group">
-            <div className="bg-white/10 p-3 rounded-full group-hover:bg-white/20 transition-colors">
-              <Headphones className="w-5 h-5" />
+            <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-serif font-bold tracking-tight mb-8 text-foreground leading-[1.05]">
+              Every Story <br />
+              <span className="text-primary italic font-normal">Deserves</span> to Be Heard.
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
+              Real people. Real stories. Grief, trauma, survival, and the hope found on the other side. 
+              The Mouthpiece creates space for healing through honest conversations.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground px-8 h-14 w-full sm:w-auto text-base" asChild>
+                <a href="#stories">
+                  <Play className="w-5 h-5 mr-2 fill-current" /> Watch Episodes
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full border-border/80 text-foreground hover:bg-muted px-8 h-14 w-full sm:w-auto text-base" asChild>
+                <a href="#share">Share Your Story</a>
+              </Button>
             </div>
-            <span className="font-medium tracking-wide text-sm">Listen on Spotify</span>
-          </a>
+          </div>
+          <div className="w-full lg:w-[45%] relative lg:-mr-12">
+            <div className="aspect-[4/5] w-full rounded-2xl lg:rounded-l-3xl overflow-hidden relative shadow-xl border border-border/40 z-10 bg-muted">
+              <img src={HeroImage} alt="Portrait of resilience" className="w-full h-full object-cover object-center" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent"></div>
+            </div>
+            {/* Decorative background elements */}
+            <div className="absolute -top-16 -right-16 w-64 h-64 bg-secondary/20 rounded-full blur-[80px] z-0"></div>
+            <div className="absolute -bottom-16 -left-16 w-80 h-80 bg-primary/20 rounded-full blur-[80px] z-0"></div>
+          </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
-        <ArrowDown className="w-6 h-6" />
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
+import { Loader2, Mail } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -48,31 +48,51 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-24 md:py-32 bg-background border-b border-border/60">
       <div className="container mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-16">
-        <div className="lg:w-1/3">
-          <h2 className="text-4xl font-serif font-bold text-foreground mb-6">Get in Touch</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Have a question, partnership inquiry, or just want to say hello? Send us a message.
+        <div className="lg:w-5/12 flex flex-col justify-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-foreground text-sm font-medium mb-6 border border-secondary/20 w-fit">
+            <span className="w-2 h-2 rounded-full bg-secondary"></span>
+            Contact
+          </div>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Get in Touch</h2>
+          <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+            Have a question, partnership inquiry, or just want to say hello? Send us a message. We try to respond to all inquiries within 48 hours.
           </p>
-          <div className="space-y-4 text-muted-foreground">
-            <p><strong>General Inquiries:</strong> hello@themouthpiece.com</p>
-            <p><strong>Press/Media:</strong> press@themouthpiece.com</p>
+          <div className="space-y-6 text-foreground font-medium">
+            <div className="flex items-center gap-4 bg-muted p-4 rounded-2xl border border-border/60">
+              <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center border border-border/40 shadow-sm">
+                <Mail className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">General Inquiries</p>
+                <p>hello@themouthpiece.com</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 bg-muted p-4 rounded-2xl border border-border/60">
+              <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center border border-border/40 shadow-sm">
+                <Mail className="w-5 h-5 text-secondary" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Press/Media</p>
+                <p>press@themouthpiece.com</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="lg:w-2/3 bg-card p-8 md:p-10 rounded-2xl shadow-sm border border-border">
+        <div className="lg:w-7/12 bg-card p-8 md:p-12 rounded-3xl shadow-sm border border-border/60">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel className="font-semibold text-foreground">Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your Name" {...field} />
+                        <Input className="h-12 bg-background border-border/60 focus-visible:ring-primary rounded-xl" placeholder="Your Name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -83,9 +103,9 @@ export function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel className="font-semibold text-foreground">Email</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="your@email.com" {...field} />
+                        <Input className="h-12 bg-background border-border/60 focus-visible:ring-primary rounded-xl" type="email" placeholder="your@email.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -97,11 +117,11 @@ export function Contact() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel className="font-semibold text-foreground">Message</FormLabel>
                     <FormControl>
                       <Textarea 
                         placeholder="How can we help?" 
-                        className="min-h-32 resize-y" 
+                        className="min-h-40 resize-y bg-background border-border/60 focus-visible:ring-primary rounded-xl p-4" 
                         {...field} 
                       />
                     </FormControl>
@@ -109,8 +129,8 @@ export function Contact() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full sm:w-auto px-8 rounded-full" disabled={createMessage.isPending}>
-                {createMessage.isPending ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}
+              <Button type="submit" size="lg" className="w-full sm:w-auto px-10 h-14 rounded-full font-semibold bg-primary hover:bg-primary/90 text-white shadow-md hover:shadow-lg transition-all" disabled={createMessage.isPending}>
+                {createMessage.isPending ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : null}
                 Send Message
               </Button>
             </form>

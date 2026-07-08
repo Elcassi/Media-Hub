@@ -2,11 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import Logo from "@assets/Mouth-Piece_1783521164614.png";
-import { Menu, X, Play, Headphones } from "lucide-react";
+import { Menu, X, Share } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const YOUTUBE_CHANNEL_URL = "https://youtube.com";
-const SPOTIFY_URL = "https://spotify.com";
 
 const navLinks = [
   { name: "Home", href: "/#hero" },
@@ -45,56 +42,54 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent bg-background",
         isScrolled
-          ? "bg-background/90 backdrop-blur-md border-border py-4 shadow-sm"
-          : "bg-transparent py-6"
+          ? "border-border/60 py-4 shadow-sm"
+          : "border-transparent py-5"
       )}
     >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group z-50">
-          <img src={Logo} alt="The Mouthpiece" className="h-10 w-auto" />
-          <span className="font-serif font-bold text-xl tracking-tight hidden sm:block group-hover:text-primary transition-colors">
-            The Mouthpiece
-          </span>
-        </Link>
+      <div className="container mx-auto px-6 md:px-8 flex items-center justify-between">
+        <div className="flex items-center gap-12">
+          <Link href="/" className="flex items-center gap-3 group z-50">
+            <img src={Logo} alt="The Mouthpiece" className="h-10 w-auto" />
+            <span className="font-serif font-bold text-2xl tracking-tight hidden sm:block group-hover:text-primary transition-colors text-foreground">
+              The Mouthpiece
+            </span>
+          </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
-          <ul className="flex items-center gap-6">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                {link.href.startsWith("/#") && location === "/" ? (
-                  <button
-                    onClick={() => handleNavClick(link.href)}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </button>
-                ) : (
-                  <Link
-                    href={link.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-          <div className="flex items-center gap-3 pl-6 border-l border-border">
-            <Button variant="outline" size="sm" className="gap-2 rounded-full border-primary/20 text-primary hover:bg-primary/5" asChild>
-              <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer">
-                <Play className="w-4 h-4" /> Watch
-              </a>
-            </Button>
-            <Button size="sm" className="gap-2 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-              <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer">
-                <Headphones className="w-4 h-4" /> Listen
-              </a>
-            </Button>
-          </div>
-        </nav>
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center">
+            <ul className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  {link.href.startsWith("/#") && location === "/" ? (
+                    <button
+                      onClick={() => handleNavClick(link.href)}
+                      className="text-[15px] font-medium text-foreground/80 hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-[15px] font-medium text-foreground/80 hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        <div className="hidden lg:flex items-center gap-4">
+          <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 h-12" asChild>
+            <a href="#share">
+               Share Your Story
+            </a>
+          </Button>
+        </div>
 
         {/* Mobile Toggle */}
         <button
@@ -102,7 +97,7 @@ export function Navbar() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
 
         {/* Mobile Menu */}
@@ -118,7 +113,7 @@ export function Navbar() {
                 {link.href.startsWith("/#") && location === "/" ? (
                   <button
                     onClick={() => handleNavClick(link.href)}
-                    className="font-serif text-2xl font-medium text-foreground text-left w-full"
+                    className="font-sans text-xl font-medium text-foreground text-left w-full"
                   >
                     {link.name}
                   </button>
@@ -126,7 +121,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-serif text-2xl font-medium text-foreground block"
+                    className="font-sans text-xl font-medium text-foreground block"
                   >
                     {link.name}
                   </Link>
@@ -134,15 +129,10 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="flex flex-col gap-4 mt-auto">
-            <Button variant="outline" className="w-full justify-center gap-2" asChild>
-              <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer">
-                <Play className="w-4 h-4" /> Watch on YouTube
-              </a>
-            </Button>
-            <Button className="w-full justify-center gap-2" asChild>
-              <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer">
-                <Headphones className="w-4 h-4" /> Listen on Spotify
+          <div className="flex flex-col mt-auto">
+             <Button size="lg" className="w-full rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium h-14" asChild>
+              <a href="#share" onClick={() => setIsMobileMenuOpen(false)}>
+                Share Your Story
               </a>
             </Button>
           </div>

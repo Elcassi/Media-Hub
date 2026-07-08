@@ -1,0 +1,2 @@
+- [Vite asset alias confusion](vite-asset-aliases.md) — `@assets/*` maps to top-level `attached_assets/`, not `src/assets/`; generated images need `@/assets/*`.
+- [Design subagent brief as JS string](design-subagent-brief-strings.md) — build long task-brief strings via array `.join("\n")`, not a single big template literal, to dodge JS parse errors from stray punctuation.
