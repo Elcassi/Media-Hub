@@ -53,7 +53,7 @@ export function ShareStory() {
   };
 
   return (
-    <section id="share" className="py-24 md:py-32 bg-primary/5 border-b border-border/60">
+    <section id="share" className="py-24 md:py-32 bg-background border-b border-border/60">
       <div className="container mx-auto px-6 md:px-12">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">

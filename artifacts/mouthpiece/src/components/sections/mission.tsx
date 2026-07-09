@@ -2,7 +2,7 @@ import Story3 from "@/assets/story3.png";
 
 export function Mission() {
   return (
-    <section id="mission" className="py-24 md:py-32 bg-muted/30 border-b border-border/60">
+    <section id="mission" className="py-24 md:py-32 bg-background border-b border-border/60">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2 flex flex-col items-start lg:pl-8">
