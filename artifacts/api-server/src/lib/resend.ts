@@ -1,9 +1,12 @@
 import { ReplitConnectors } from "@replit/connectors-sdk";
+import { logger } from "./logger";
 
 const connectors = new ReplitConnectors();
 
 const NOTIFY_EMAIL = "info@mouthpiecemedia.org";
-const FROM_EMAIL = "noreply@mouthpiecemedia.org";
+// Uses Resend's built-in verified sender — no domain setup needed.
+// Once mouthpiecemedia.org is verified in Resend, change this to noreply@mouthpiecemedia.org
+const FROM_EMAIL = "The Mouthpiece <onboarding@resend.dev>";
 
 export async function sendStorySubmissionEmail(data: {
   fullName: string;
@@ -13,7 +16,7 @@ export async function sendStorySubmissionEmail(data: {
   preferredContactMethod: string;
 }) {
   try {
-    await connectors.proxy("resend", "/emails", {
+    const response = await connectors.proxy("resend", "/emails", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -33,9 +36,9 @@ export async function sendStorySubmissionEmail(data: {
         `,
       }),
     });
+    logger.info({ status: response.status }, "Story submission email sent");
   } catch (err) {
-    // Non-fatal: log but don't fail the submission
-    console.error("Resend story submission email failed:", err);
+    logger.error({ err }, "Resend story submission email failed");
   }
 }
 
@@ -45,7 +48,7 @@ export async function sendContactMessageEmail(data: {
   message: string;
 }) {
   try {
-    await connectors.proxy("resend", "/emails", {
+    const response = await connectors.proxy("resend", "/emails", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -63,7 +66,8 @@ export async function sendContactMessageEmail(data: {
         `,
       }),
     });
+    logger.info({ status: response.status }, "Contact message email sent");
   } catch (err) {
-    console.error("Resend contact message email failed:", err);
+    logger.error({ err }, "Resend contact message email failed");
   }
 }
