@@ -4,6 +4,7 @@ import {
   CreateContactMessageBody,
   CreateContactMessageResponse,
 } from "@workspace/api-zod";
+import { sendContactMessageEmail } from "../lib/resend";
 
 const router: IRouter = Router();
 
@@ -19,6 +20,9 @@ router.post("/contact-messages", async (req, res): Promise<void> => {
     .insert(contactMessagesTable)
     .values(parsed.data)
     .returning();
+
+  // Send email notification — non-blocking, errors are caught internally
+  void sendContactMessageEmail(parsed.data);
 
   res.status(201).json(CreateContactMessageResponse.parse(message));
 });

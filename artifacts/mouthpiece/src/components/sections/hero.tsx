@@ -1,19 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-import HeroImage from "@/assets/hero.png";
 
 export function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate min-h-[92vh] flex items-center overflow-hidden bg-[#150E2B]"
+      className="relative isolate min-h-[92vh] flex items-center"
     >
-      {/* Full-bleed background photo, mirrored so the subject reads on the right */}
-      <img
-        src={HeroImage}
-        alt="Portrait of resilience"
-        className="absolute inset-0 w-full h-full object-cover object-center -scale-x-100"
-      />
       {/* Dark cinematic overlay: solid on the left for text legibility, fading toward the subject on the right */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0E0820] via-[#0E0820]/80 to-[#0E0820]/10"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0E0820] via-transparent to-transparent"></div>

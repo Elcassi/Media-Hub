@@ -58,14 +58,6 @@ export function Navbar() {
         <div className="flex items-center gap-12">
           <Link href="/" className="flex items-center gap-3 group z-50">
             <img src={Logo} alt="The Mouthpiece" className="h-10 w-auto" />
-            <span
-              className={cn(
-                "font-serif font-bold text-2xl tracking-tight hidden sm:block transition-colors",
-                overlayHero ? "text-white group-hover:text-secondary" : "text-foreground group-hover:text-primary"
-              )}
-            >
-              The Mouthpiece
-            </span>
           </Link>
 
           {/* Desktop Nav */}

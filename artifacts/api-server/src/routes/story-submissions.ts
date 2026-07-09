@@ -4,6 +4,7 @@ import {
   CreateStorySubmissionBody,
   CreateStorySubmissionResponse,
 } from "@workspace/api-zod";
+import { sendStorySubmissionEmail } from "../lib/resend";
 
 const router: IRouter = Router();
 
@@ -19,6 +20,9 @@ router.post("/story-submissions", async (req, res): Promise<void> => {
     .insert(storySubmissionsTable)
     .values(parsed.data)
     .returning();
+
+  // Send email notification — non-blocking, errors are caught internally
+  void sendStorySubmissionEmail(parsed.data);
 
   res.status(201).json(CreateStorySubmissionResponse.parse(submission));
 });
