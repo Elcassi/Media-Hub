@@ -20,7 +20,7 @@ export function About() {
               We preserve the stories that often stay hidden behind silence.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              When we speak our pain, we break its hold—and offer a lifeline to others walking the same dark path. 
+              When we speak our pain, we break its hold and offer a lifeline to others walking the same dark path.
               The Mouthpiece is not just an interview show; it is a dedicated space where the bereaved can find their voice.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">

@@ -2,8 +2,8 @@ import { ReplitConnectors } from "@replit/connectors-sdk";
 
 const connectors = new ReplitConnectors();
 
-const NOTIFY_EMAIL = "otito@themouthpiece.com";
-const FROM_EMAIL = "noreply@themouthpiece.com";
+const NOTIFY_EMAIL = "info@mouthpiecemedia.org";
+const FROM_EMAIL = "noreply@mouthpiecemedia.org";
 
 export async function sendStorySubmissionEmail(data: {
   fullName: string;
@@ -22,7 +22,7 @@ export async function sendStorySubmissionEmail(data: {
         reply_to: data.email,
         subject: `New Story Submission from ${data.fullName}`,
         html: `
-          <h2>New Story Submission — The Mouthpiece</h2>
+          <h2>New Story Submission - The Mouthpiece</h2>
           <table cellpadding="8" style="border-collapse:collapse;width:100%;max-width:600px">
             <tr><td><strong>Name</strong></td><td>${data.fullName}</td></tr>
             <tr><td><strong>Email</strong></td><td>${data.email}</td></tr>
@@ -34,7 +34,7 @@ export async function sendStorySubmissionEmail(data: {
       }),
     });
   } catch (err) {
-    // Non-fatal — log but don't fail the submission
+    // Non-fatal: log but don't fail the submission
     console.error("Resend story submission email failed:", err);
   }
 }
@@ -54,7 +54,7 @@ export async function sendContactMessageEmail(data: {
         reply_to: data.email,
         subject: `New Contact Message from ${data.name}`,
         html: `
-          <h2>New Contact Message — The Mouthpiece</h2>
+          <h2>New Contact Message - The Mouthpiece</h2>
           <table cellpadding="8" style="border-collapse:collapse;width:100%;max-width:600px">
             <tr><td><strong>Name</strong></td><td>${data.name}</td></tr>
             <tr><td><strong>Email</strong></td><td>${data.email}</td></tr>
