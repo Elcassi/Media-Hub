@@ -59,24 +59,13 @@ export function Contact() {
           <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
             Have a question, partnership inquiry, or just want to say hello? Send us a message. We try to respond to all inquiries within 48 hours.
           </p>
-          <div className="space-y-6 text-foreground font-medium">
-            <div className="flex items-center gap-4 bg-muted p-4 rounded-2xl border border-border/60">
-              <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center border border-border/40 shadow-sm">
-                <Mail className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">General Inquiries</p>
-                <p>hello@themouthpiece.com</p>
-              </div>
+          <div className="flex items-center gap-4 bg-muted p-4 rounded-2xl border border-border/60">
+            <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center border border-border/40 shadow-sm">
+              <Mail className="w-5 h-5 text-primary" />
             </div>
-            <div className="flex items-center gap-4 bg-muted p-4 rounded-2xl border border-border/60">
-              <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center border border-border/40 shadow-sm">
-                <Mail className="w-5 h-5 text-secondary" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Press/Media</p>
-                <p>press@themouthpiece.com</p>
-              </div>
+            <div>
+              <p className="text-sm text-muted-foreground">Email</p>
+              <a href="mailto:info@mouthpiecemedia.org" className="hover:text-primary transition-colors">info@mouthpiecemedia.org</a>
             </div>
           </div>
         </div>
