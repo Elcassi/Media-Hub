@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import Logo from "@assets/Mouth-Piece_1783521164614.png";
-import { Menu, X, Youtube, Music2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { FaYoutube, FaSpotify } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 const YOUTUBE_CHANNEL_URL = "https://youtube.com";
@@ -105,7 +106,7 @@ export function Navbar() {
                 : "border-border text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary"
             )}
           >
-            <Youtube className="w-4 h-4" />
+            <FaYoutube className="w-4 h-4" style={{ width: 18, height: 18 }} />
           </a>
           <a
             href={SPOTIFY_URL}
@@ -119,7 +120,7 @@ export function Navbar() {
                 : "border-border text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary"
             )}
           >
-            <Music2 className="w-4 h-4" />
+            <FaSpotify className="w-4 h-4" style={{ width: 18, height: 18 }} />
           </a>
           <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 h-12 ml-1" asChild>
             <a href="#share">
@@ -175,7 +176,7 @@ export function Navbar() {
                 aria-label="Watch on YouTube"
                 className="flex-1 h-14 rounded-full border border-border flex items-center justify-center gap-2 text-foreground font-medium"
               >
-                <Youtube className="w-5 h-5" /> YouTube
+                <FaYoutube style={{ width: 20, height: 20 }} /> YouTube
               </a>
               <a
                 href={SPOTIFY_URL}
@@ -184,7 +185,7 @@ export function Navbar() {
                 aria-label="Listen on Spotify"
                 className="flex-1 h-14 rounded-full border border-border flex items-center justify-center gap-2 text-foreground font-medium"
               >
-                <Music2 className="w-5 h-5" /> Spotify
+                <FaSpotify style={{ width: 20, height: 20 }} /> Spotify
               </a>
             </div>
             <Button size="lg" className="w-full rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium h-14" asChild>

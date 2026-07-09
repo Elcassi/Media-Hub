@@ -1,4 +1,5 @@
-import { Youtube, Music2, Instagram } from "lucide-react";
+import { Instagram } from "lucide-react";
+import { FaYoutube, FaSpotify } from "react-icons/fa";
 import ScriptureImage from "@/assets/scripture.png";
 
 const YOUTUBE_CHANNEL_URL = "https://youtube.com";
@@ -6,8 +7,8 @@ const SPOTIFY_URL = "https://spotify.com";
 const INSTAGRAM_URL = "#";
 
 const platforms = [
-  { name: "YouTube", href: YOUTUBE_CHANNEL_URL, icon: Youtube },
-  { name: "Spotify", href: SPOTIFY_URL, icon: Music2 },
+  { name: "YouTube", href: YOUTUBE_CHANNEL_URL, icon: FaYoutube },
+  { name: "Spotify", href: SPOTIFY_URL, icon: FaSpotify },
   { name: "Instagram", href: INSTAGRAM_URL, icon: Instagram },
 ];
 
