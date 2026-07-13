@@ -1,43 +1,6 @@
-import { Play, Mic2 } from "lucide-react";
-import Story1 from "@/assets/story1.png";
-import Story2 from "@/assets/story2.png";
-import Story3 from "@/assets/story3.png";
-import Story4 from "@/assets/story4.png";
-
-const stories = [
-  {
-    id: 1,
-    title: "Finding Light After the Unexpected",
-    name: "Eleanor Vance",
-    category: "Healing",
-    duration: "42:15",
-    image: Story1
-  },
-  {
-    id: 2,
-    title: "The Weight of What Remains",
-    name: "Marcus Thorne",
-    category: "Grief",
-    duration: "38:20",
-    image: Story2
-  },
-  {
-    id: 3,
-    title: "Echoes of a Father's Love",
-    name: "David Chen",
-    category: "Legacy",
-    duration: "45:10",
-    image: Story3
-  },
-  {
-    id: 4,
-    title: "A Sister's Unbroken Bond",
-    name: "Maya Rostova",
-    category: "Survival",
-    duration: "31:45",
-    image: Story4
-  }
-];
+import { Youtube } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { YOUTUBE_CHANNEL_URL } from "@/lib/socials";
 
 export function FeaturedStories() {
   return (
@@ -53,37 +16,21 @@ export function FeaturedStories() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-          {stories.map((story) => (
-            <div key={story.id} className="group cursor-pointer flex flex-col">
-              <div className="relative aspect-[4/3] md:aspect-square overflow-hidden rounded-2xl bg-muted mb-6 shadow-sm border border-border/40">
-                <img 
-                  src={story.image} 
-                  alt={story.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 shadow-xl">
-                    <Play className="w-6 h-6 text-primary fill-primary ml-1" />
-                  </div>
-                </div>
-                <div className="absolute bottom-4 right-4 bg-background/95 backdrop-blur-md text-foreground text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">
-                  {story.duration}
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-2 mb-3">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-secondary/20 text-secondary-foreground">
-                  <Mic2 className="w-3 h-3 text-secondary-foreground" />
-                </span>
-                <span className="text-xs font-bold uppercase tracking-wider text-secondary-foreground">{story.category}</span>
-                <span className="text-muted-foreground/50 text-xs">•</span>
-                <span className="text-muted-foreground text-xs font-medium">{story.name}</span>
-              </div>
-              
-              <h3 className="text-xl font-serif font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">{story.title}</h3>
-            </div>
-          ))}
+        <div className="flex flex-col items-center justify-center rounded-3xl border border-border/50 bg-muted/30 py-24 px-6 gap-6 text-center">
+          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+            <Youtube className="w-8 h-8 text-primary" />
+          </div>
+          <div>
+            <h3 className="font-serif font-bold text-2xl text-foreground mb-3">First episodes coming soon</h3>
+            <p className="text-muted-foreground max-w-md mx-auto">
+              We're preparing powerful conversations about grief, healing, faith, and hope. Subscribe on YouTube to be the first to know when we go live.
+            </p>
+          </div>
+          <Button size="lg" className="rounded-full bg-[#FF0000] hover:bg-[#CC0000] text-white px-8 h-12 mt-2" asChild>
+            <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer">
+              <Youtube className="w-4 h-4 mr-2" /> Subscribe on YouTube
+            </a>
+          </Button>
         </div>
       </div>
     </section>
