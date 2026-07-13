@@ -24,7 +24,8 @@ import type {
   CreateContactMessageInput,
   CreateStorySubmissionInput,
   HealthStatus,
-  StorySubmission
+  StorySubmission,
+  YoutubeVideo
 } from './api.schemas';
 
 import { customFetch } from '../custom-fetch';
@@ -203,6 +204,84 @@ export const useCreateStorySubmission = <TError = ErrorType<void>,
       > => {
       return useMutation(getCreateStorySubmissionMutationOptions(options));
     }
+
+export const getGetYoutubeLatestUrl = () => {
+
+
+
+
+  return `/api/youtube/latest`
+}
+
+/**
+ * Returns the latest videos from The Mouthpiece YouTube channel
+ * @summary Get latest YouTube videos
+ */
+export const getYoutubeLatest = async ( options?: RequestInit): Promise<YoutubeVideo[]> => {
+
+  return customFetch<YoutubeVideo[]>(getGetYoutubeLatestUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+
+
+
+export const getGetYoutubeLatestQueryKey = () => {
+    return [
+    `/api/youtube/latest`
+    ] as const;
+    }
+
+
+export const getGetYoutubeLatestQueryOptions = <TData = Awaited<ReturnType<typeof getYoutubeLatest>>, TError = ErrorType<void>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getYoutubeLatest>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
+) => {
+
+const {query: queryOptions, request: requestOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetYoutubeLatestQueryKey();
+
+
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getYoutubeLatest>>> = ({ signal }) => getYoutubeLatest({ signal, ...requestOptions });
+
+
+
+
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getYoutubeLatest>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type GetYoutubeLatestQueryResult = NonNullable<Awaited<ReturnType<typeof getYoutubeLatest>>>
+export type GetYoutubeLatestQueryError = ErrorType<void>
+
+
+/**
+ * @summary Get latest YouTube videos
+ */
+
+export function useGetYoutubeLatest<TData = Awaited<ReturnType<typeof getYoutubeLatest>>, TError = ErrorType<void>>(
+  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getYoutubeLatest>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
+
+ ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+
+  const queryOptions = getGetYoutubeLatestQueryOptions(options)
+
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  return withQueryKey(query, queryOptions.queryKey);
+}
+
+
+
+
+
+
 
 export const getCreateContactMessageUrl = () => {
 

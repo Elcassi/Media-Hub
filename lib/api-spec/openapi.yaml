@@ -14,6 +14,8 @@ tags:
     description: Story submission operations
   - name: contact
     description: Contact message operations
+  - name: youtube
+    description: YouTube content operations
 paths:
   /healthz:
     get:
@@ -49,6 +51,23 @@ paths:
                 $ref: "#/components/schemas/StorySubmission"
         "400":
           description: Validation error
+  /youtube/latest:
+    get:
+      operationId: getYoutubeLatest
+      tags: [youtube]
+      summary: Get latest YouTube videos
+      description: Returns the latest videos from The Mouthpiece YouTube channel
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/YoutubeVideo"
+        "502":
+          description: YouTube API error
   /contact-messages:
     post:
       operationId: createContactMessage
@@ -72,6 +91,28 @@ paths:
           description: Validation error
 components:
   schemas:
+    YoutubeVideo:
+      type: object
+      properties:
+        videoId:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        thumbnailUrl:
+          type: string
+        publishedAt:
+          type: string
+        channelTitle:
+          type: string
+      required:
+        - videoId
+        - title
+        - description
+        - thumbnailUrl
+        - publishedAt
+        - channelTitle
     HealthStatus:
       type: object
       properties:

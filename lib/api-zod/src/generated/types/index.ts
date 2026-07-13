@@ -13,3 +13,4 @@ export * from './createStorySubmissionInputPreferredContactMethod';
 export * from './healthStatus';
 export * from './storySubmission';
 export * from './storySubmissionPreferredContactMethod';
+export * from './youtubeVideo';

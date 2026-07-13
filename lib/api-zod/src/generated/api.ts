@@ -45,6 +45,21 @@ export const CreateStorySubmissionResponse = zod.object({
 
 
 /**
+ * Returns the latest videos from The Mouthpiece YouTube channel
+ * @summary Get latest YouTube videos
+ */
+export const GetYoutubeLatestResponseItem = zod.object({
+  "videoId": zod.string(),
+  "title": zod.string(),
+  "description": zod.string(),
+  "thumbnailUrl": zod.string(),
+  "publishedAt": zod.string(),
+  "channelTitle": zod.string()
+})
+export const GetYoutubeLatestResponse = zod.array(GetYoutubeLatestResponseItem)
+
+
+/**
  * Submits a message from the contact form
  * @summary Send a contact message
  */
