@@ -5,9 +5,7 @@ import Logo from "@assets/Mouth-Piece_1783521164614.png";
 import { Menu, X } from "lucide-react";
 import { FaYoutube, FaSpotify } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-
-const YOUTUBE_CHANNEL_URL = "https://youtube.com";
-const SPOTIFY_URL = "https://spotify.com";
+import { YOUTUBE_CHANNEL_URL, SPOTIFY_URL } from "@/lib/socials";
 
 const navLinks = [
   { name: "Home", href: "/#hero" },

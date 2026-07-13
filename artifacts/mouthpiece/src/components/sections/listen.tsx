@@ -1,8 +1,6 @@
 import { Music2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const SPOTIFY_URL = "https://spotify.com";
-const SPOTIFY_SHOW_URL = "https://open.spotify.com/embed/show/6n2vB2Jv2R4d5u8w0w1w8v?utm_source=generator"; // Placeholder podcast
+import { SPOTIFY_URL } from "@/lib/socials";
 
 export function Listen() {
   return (
@@ -28,17 +26,20 @@ export function Listen() {
             </div>
           </div>
           <div className="lg:col-span-7">
-            <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50 bg-card transform rotate-1 hover:rotate-0 transition-transform duration-500">
-              <iframe 
-                src={SPOTIFY_SHOW_URL} 
-                width="100%" 
-                height="352" 
-                frameBorder="0" 
-                allowFullScreen 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy"
-                className="w-full border-0 block"
-              ></iframe>
+            {/* Placeholder — replaced by podcast embed once Spotify show URL is provided */}
+            <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50 bg-card flex flex-col items-center justify-center py-20 gap-6">
+              <Music2 className="w-14 h-14 text-[#1DB954]/50" />
+              <div className="text-center px-8">
+                <p className="font-serif font-semibold text-xl text-foreground mb-2">Listen on Spotify</p>
+                <p className="text-muted-foreground mb-6 max-w-sm">
+                  Our podcast episodes are available on Spotify.
+                </p>
+                <Button size="lg" className="rounded-full bg-[#1DB954] hover:bg-[#1ed760] text-white px-8 h-14" asChild>
+                  <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer">
+                    Open on Spotify
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

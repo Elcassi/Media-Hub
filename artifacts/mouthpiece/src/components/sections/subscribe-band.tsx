@@ -1,12 +1,13 @@
-import { FaYoutube, FaSpotify } from "react-icons/fa";
+import { FaYoutube, FaSpotify, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import ScriptureImage from "@/assets/scripture.png";
-
-const YOUTUBE_CHANNEL_URL = "https://youtube.com";
-const SPOTIFY_URL = "https://spotify.com";
+import { YOUTUBE_CHANNEL_URL, SPOTIFY_URL, INSTAGRAM_URL, TWITTER_URL } from "@/lib/socials";
 
 const platforms = [
   { name: "YouTube", href: YOUTUBE_CHANNEL_URL, icon: FaYoutube },
   { name: "Spotify", href: SPOTIFY_URL, icon: FaSpotify },
+  { name: "Instagram", href: INSTAGRAM_URL, icon: FaInstagram },
+  { name: "X / Twitter", href: TWITTER_URL, icon: FaXTwitter },
 ];
 
 export function SubscribeBand() {

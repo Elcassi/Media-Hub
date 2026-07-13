@@ -1,14 +1,17 @@
 import { Link } from "wouter";
 import Logo from "@assets/Mouth-Piece_1783521164614.png";
-import { Youtube, Instagram, Facebook, Twitter, Linkedin, Music2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { FaYoutube, FaSpotify, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
+import { YOUTUBE_CHANNEL_URL, SPOTIFY_URL, INSTAGRAM_URL, TWITTER_URL } from "@/lib/socials";
 
-const YOUTUBE_CHANNEL_URL = "https://youtube.com";
-const SPOTIFY_URL = "https://spotify.com";
-const INSTAGRAM_URL = "#";
-const FACEBOOK_URL = "#";
-const TWITTER_URL = "#";
-const LINKEDIN_URL = "#";
+const socialLinks = [
+  { href: YOUTUBE_CHANNEL_URL, icon: FaYoutube, label: "YouTube" },
+  { href: SPOTIFY_URL, icon: FaSpotify, label: "Spotify" },
+  { href: INSTAGRAM_URL, icon: FaInstagram, label: "Instagram" },
+  { href: TWITTER_URL, icon: FaXTwitter, label: "X / Twitter" },
+];
 
 export function Footer() {
   return (
@@ -47,7 +50,7 @@ export function Footer() {
 
           {/* Links Col 2 */}
           <div className="lg:col-span-2">
-             <h4 className="font-semibold text-foreground mb-6 uppercase tracking-wider text-sm">Legal & Connect</h4>
+            <h4 className="font-semibold text-foreground mb-6 uppercase tracking-wider text-sm">Legal & Connect</h4>
             <ul className="space-y-4">
               <li><Link href="/#contact" className="text-muted-foreground hover:text-secondary font-medium transition-colors">Contact</Link></li>
               <li><Link href="/privacy" className="text-muted-foreground hover:text-secondary font-medium transition-colors">Privacy Policy</Link></li>
@@ -59,26 +62,23 @@ export function Footer() {
           <div className="lg:col-span-3 lg:col-start-10">
             <h4 className="font-semibold text-foreground mb-6 uppercase tracking-wider text-sm">Follow Us</h4>
             <div className="flex flex-wrap gap-3 mb-8">
-              <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all">
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all">
-                <Music2 className="w-4 h-4" />
-              </a>
-              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all">
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all">
-                <Facebook className="w-4 h-4" />
-              </a>
+              {socialLinks.map(({ href, icon: Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
             
             <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between p-4 rounded-xl bg-muted hover:bg-muted/70 transition-colors border border-transparent hover:border-secondary/30">
               <div className="flex items-center gap-3">
-                <Youtube className="w-5 h-5 text-secondary" />
+                <FaYoutube className="w-5 h-5 text-secondary" />
                 <span className="font-medium text-foreground text-sm">Subscribe on YouTube</span>
               </div>
               <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-secondary transition-transform group-hover:translate-x-1" />
