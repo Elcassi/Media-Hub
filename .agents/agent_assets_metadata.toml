@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "fLBVhaDk_jOVSXJyS8JVP"
@@ -36,3 +35,51 @@ id = "YQijAbUE4YzXABkE6DqJJ"
 uri = "file://artifacts/mouthpiece/src/assets/scripture.png"
 type = "image"
 title = "soft flowing water light"
+
+[[outputs]]
+id = "VnNsGAfSCDK4K2IK3_kHc"
+uri = "file://attached_assets/unsplash_candidates/hero_1.jpg"
+type = "image"
+title = "Hero candidate 1 – Black man contemplative"
+
+[[outputs]]
+id = "30G0r6z31aEpTyQxXZAP7"
+uri = "file://attached_assets/unsplash_candidates/hero_2.jpg"
+type = "image"
+title = "Hero candidate 2 – spiritual/prayer portrait"
+
+[[outputs]]
+id = "y5i7k1-uGslfAIHLkx2H5"
+uri = "file://attached_assets/unsplash_candidates/hero_3.jpg"
+type = "image"
+title = "Hero candidate 3 – woman dark background"
+
+[[outputs]]
+id = "TZdITJxSIIwnXwwqRTR9i"
+uri = "file://attached_assets/unsplash_candidates/about_1.jpg"
+type = "image"
+title = "About candidate 1 – woman sitting"
+
+[[outputs]]
+id = "9cvP_h7ZoJ_Cwn8BxZd1d"
+uri = "file://attached_assets/unsplash_candidates/about_2.jpg"
+type = "image"
+title = "About candidate 2 – woman in thought"
+
+[[outputs]]
+id = "wqzgkBQwODlwGCSf5j9vv"
+uri = "file://attached_assets/unsplash_candidates/about_3.jpg"
+type = "image"
+title = "About candidate 3 – emotional portrait"
+
+[[outputs]]
+id = "P9gT-tn8_oEFOIU69FPB-"
+uri = "file://attached_assets/unsplash_candidates/mission_1.jpg"
+type = "image"
+title = "Mission candidate 1 – people conversation"
+
+[[outputs]]
+id = "0YC4zRbxVUG_3u8K-9zx5"
+uri = "file://attached_assets/unsplash_candidates/mission_2.jpg"
+type = "image"
+title = "Mission candidate 2 – woman looking back"
