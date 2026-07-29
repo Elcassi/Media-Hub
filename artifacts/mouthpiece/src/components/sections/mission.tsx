@@ -1,4 +1,4 @@
-import Story3 from "@/assets/mission-conversation.png";
+import Story3 from "@/assets/mission-portrait.jpg";
 
 export function Mission() {
   return (
