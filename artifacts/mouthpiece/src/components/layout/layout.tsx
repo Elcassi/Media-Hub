@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Navbar } from "./navbar";
 import { Footer } from "./footer";
-import HeroImage from "@/assets/hero.png";
+import HeroImage from "@/assets/hero-portrait.jpg";
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
