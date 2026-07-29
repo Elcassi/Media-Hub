@@ -1,4 +1,4 @@
-import Story2 from "@/assets/story2.png";
+import Story2 from "@/assets/about-portrait.jpg";
 
 export function About() {
   return (
