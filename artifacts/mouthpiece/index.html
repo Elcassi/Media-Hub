@@ -3,24 +3,124 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>The Mouthpiece</title>
+    <title>The Mouthpiece — Giving the Bereaved a Voice</title>
     <meta name="description" content="A documentary-style interview platform giving bereaved people a voice. Honest conversations about grief, healing, faith, and hope. Watch on YouTube, listen on Spotify." />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="The Mouthpiece" />
+    <meta property="og:title" content="The Mouthpiece — Giving the Bereaved a Voice" />
     <meta property="og:description" content="A documentary-style interview platform giving bereaved people a voice. Honest conversations about grief, healing, faith, and hope. Watch on YouTube, listen on Spotify." />
     <meta property="og:url" content="https://mouthpiecemedia.org" />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://mouthpiecemedia.org/opengraph.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The Mouthpiece" />
+    <meta name="twitter:title" content="The Mouthpiece — Giving the Bereaved a Voice" />
     <meta name="twitter:description" content="A documentary-style interview platform giving bereaved people a voice. Honest conversations about grief, healing, faith, and hope. Watch on YouTube, listen on Spotify." />
+    <meta name="twitter:image" content="https://mouthpiecemedia.org/opengraph.jpg" />
+    <link rel="canonical" href="https://mouthpiecemedia.org" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Minimal styles so static content is readable before React loads */
+      body { margin: 0; font-family: Inter, sans-serif; background: #0E0820; color: #fff; }
+      .static-nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; }
+      .static-nav a { color: #fff; text-decoration: none; margin: 0 0.75rem; font-size: 0.95rem; }
+      .static-hero { padding: 8rem 2rem 4rem; max-width: 800px; }
+      .static-hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; line-height: 1.05; margin: 0 0 1.5rem; }
+      .static-hero p { font-size: 1.15rem; color: rgba(255,255,255,0.75); max-width: 560px; line-height: 1.7; }
+      .static-section { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); }
+      .static-section h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; margin-bottom: 1rem; }
+      .static-section p { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 1.05rem; }
+      .static-footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+      .static-footer a { color: rgba(255,255,255,0.6); margin: 0 0.5rem; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static content rendered immediately — replaced by React once JS loads -->
+      <header>
+        <nav class="static-nav" aria-label="Main navigation">
+          <a href="/" aria-label="The Mouthpiece home">The Mouthpiece</a>
+          <div>
+            <a href="/#about">About</a>
+            <a href="/#stories">Stories</a>
+            <a href="/#watch">Watch</a>
+            <a href="/#listen">Listen</a>
+            <a href="/#share">Share Your Story</a>
+            <a href="/#contact">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section id="hero" aria-label="Hero">
+          <div class="static-hero">
+            <p style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:1rem;">Giving the bereaved a voice</p>
+            <h1>Every Story Deserves to Be Heard.</h1>
+            <p>Real people. Real stories. Grief, trauma, survival, and the hope found on the other side. The Mouthpiece creates space for healing through honest conversations.</p>
+            <p style="margin-top:1.5rem;">
+              <a href="/#watch" style="color:#a78bfa;">Watch Episodes</a> &nbsp;&middot;&nbsp;
+              <a href="/#share" style="color:#a78bfa;">Share Your Story</a>
+            </p>
+          </div>
+        </section>
+
+        <section id="about" class="static-section" aria-label="About">
+          <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">Our Purpose</p>
+          <h2>We preserve the stories that often stay hidden behind silence.</h2>
+          <p>When we speak our pain, we break its hold and offer a lifeline to others walking the same dark path. The Mouthpiece is not just an interview show; it is a dedicated space where the bereaved can find their voice.</p>
+          <p style="margin-top:1rem;">We believe that genuine healing begins with feeling heard, and that no one should have to navigate their hardest days feeling completely alone.</p>
+        </section>
+
+        <section id="mission" class="static-section" aria-label="Our Mission">
+          <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">The Mission</p>
+          <h2>"Bringing healing, one testimony at a time."</h2>
+          <p>Shared experience creates profound connection. By providing a dignified space for honest conversations about grief and survival, we remind each other that no one has to walk through the valley alone.</p>
+        </section>
+
+        <section id="watch" class="static-section" aria-label="Watch on YouTube">
+          <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">Watch</p>
+          <h2>Watch The Mouthpiece on YouTube</h2>
+          <p>New episodes available on our YouTube channel. Subscribe so you never miss a conversation.</p>
+          <p style="margin-top:1rem;"><a href="https://www.youtube.com/@Mouthpiece_media" target="_blank" rel="noopener noreferrer" style="color:#a78bfa;">youtube.com/@Mouthpiece_media</a></p>
+        </section>
+
+        <section id="listen" class="static-section" aria-label="Listen on Spotify">
+          <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">Listen</p>
+          <h2>Listen on Spotify</h2>
+          <p>All episodes available as a podcast on Spotify. Listen wherever you are.</p>
+          <p style="margin-top:1rem;"><a href="https://open.spotify.com/show/033OUv4AFh5IH81XwExt4V" target="_blank" rel="noopener noreferrer" style="color:#a78bfa;">Open on Spotify</a></p>
+        </section>
+
+        <section id="share" class="static-section" aria-label="Share Your Story">
+          <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">Share Your Story</p>
+          <h2>Your Story Matters</h2>
+          <p>Have you experienced grief, loss, or trauma and found a way through? The Mouthpiece invites you to share your testimony. Your story could be the lifeline someone else needs today.</p>
+        </section>
+
+        <section id="contact" class="static-section" aria-label="Contact">
+          <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">Contact</p>
+          <h2>Get in Touch</h2>
+          <p>Reach us at <a href="mailto:info@mouthpiecemedia.org" style="color:#a78bfa;">info@mouthpiecemedia.org</a></p>
+          <p style="margin-top:0.5rem;">
+            Follow us:
+            <a href="https://www.youtube.com/@Mouthpiece_media" target="_blank" rel="noopener noreferrer" style="color:#a78bfa;">YouTube</a> &middot;
+            <a href="https://www.instagram.com/mouthpiece360/" target="_blank" rel="noopener noreferrer" style="color:#a78bfa;">Instagram</a> &middot;
+            <a href="https://x.com/Mouthpiece360" target="_blank" rel="noopener noreferrer" style="color:#a78bfa;">X</a> &middot;
+            <a href="https://open.spotify.com/show/033OUv4AFh5IH81XwExt4V" target="_blank" rel="noopener noreferrer" style="color:#a78bfa;">Spotify</a>
+          </p>
+        </section>
+      </main>
+
+      <footer class="static-footer">
+        <p>&copy; 2024 The Mouthpiece. All rights reserved. Founded by Otito Diri Chukwu.</p>
+        <p style="margin-top:0.5rem;">
+          <a href="/privacy">Privacy Policy</a> &middot;
+          <a href="/terms">Terms of Service</a>
+        </p>
+      </footer>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
